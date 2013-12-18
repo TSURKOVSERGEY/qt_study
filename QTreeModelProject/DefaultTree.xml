@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- fucking shit -->
+<root>
+    <room id = "501" name = "K-101">
+        <desktop id = "1001" host = "localhost" ip = "192.168.0.1">
+            <hdd id = "10001"/>
+            <hdd id = "10002"/>
+            <cpu id = "10003"/>    
+        </desktop>
+        <desktop id = "1002" host = "localhost" ip = "192.168.0.1">
+            <hdd id = "10004"/>
+            <hdd id = "10005"/>
+            <cpu id = "10006"/>    
+        </desktop>
+    </room>
+    <room id = "502" name = "K-102">
+        <desktop id = "1003" host = "localhost" ip = "192.168.0.1">
+            <hdd id = "10007"/>
+            <hdd id = "10008"/>
+            <cpu id = "10009"/>    
+        </desktop>
+    </room>
+    <room id = "503" name = "A-208">
+        <desktop id = "1004" host = "localhost" ip = "192.168.0.1">
+            <hdd id = "10010"/>
+            <hdd id = "10011"/>
+            <cpu id = "10012"/>    
+        </desktop>
+        <desktop id = "1005" host = "localhost" ip = "192.168.0.1">
+            <hdd id = "10013"/>
+            <hdd id = "10014"/>
+            <cpu id = "10015"/>    
+        </desktop>
+        <desktop id = "1006" host = "localhost" ip = "192.168.0.1">
+            <hdd id = "10016"/>
+            <hdd id = "10017"/>
+            <cpu id = "10018"/>    
+        </desktop>
+    </room>
+</root>
