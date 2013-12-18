@@ -2,7 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QtXml>
+#include <QTreeView>
+#include "saxhandler.h"
+#include "treemodel.h"
+\
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +21,13 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    TreeModel *pTreeModel;
+    QFile *pFile;
+    QXmlSimpleReader *pXmlReader;
+    QXmlInputSource *pSource;
+    SaxHandler *pHandler;
+    QTreeView *pView;
 };
 
 #endif // MAINWINDOW_H

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,10 +16,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     treeitem.cpp \
-    treemodel.cpp
+    treemodel.cpp \
+    saxhandler.cpp
 
 HEADERS  += mainwindow.h \
     treeitem.h \
-    treemodel.h
+    treemodel.h \
+    saxhandler.h
 
 FORMS    += mainwindow.ui
+

@@ -13,10 +13,10 @@ class TreeModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    TreeModel(const QString &data, QObject *parent = 0);
+    TreeModel(void);
     ~TreeModel();
 
-    void AddChild(const QString &data);
+    TreeItem* GetRootItem(void);
 
 
     QVariant data(const QModelIndex &index, int role) const;
@@ -30,7 +30,6 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
 private:
-    void setupModelData(const QStringList &lines, TreeItem *parent);
 
     TreeItem *rootItem;
 };

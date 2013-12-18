@@ -38,8 +38,8 @@ void MainWindow::OpenFile()
     //connect(tree->selectionModel(),SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
       //      this,SLOT(TreeItemHandler(QItemSelection,QItemSelection)));
 
-    connect(tree->actionEvent(),SIGNAL(activated(const QModelIndex &index)),
-          this,SLOT(TreeItemHandler(const QModelIndex &index)));
+    //connect(tree->actionEvent(),SIGNAL(activated(const QModelIndex &index)),
+      //    this,SLOT(TreeItemHandler(const QModelIndex &index)));
 
 
 

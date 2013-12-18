@@ -7,11 +7,10 @@ TreeItem::TreeItem(const QList<QVariant> &data, TreeItem *parent)
     itemData = data;
 }
 
-TreeItem::TreeItem(TreeItem *parent)
+TreeItem::TreeItem(void)
 {
-    parentItem = parent;
-
-    //parentItem->appendChild(this);
+    parentItem = NULL;
+    itemData << "root";
 }
 
 // Деструктор
