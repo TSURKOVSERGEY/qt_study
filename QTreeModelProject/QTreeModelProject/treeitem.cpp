@@ -1,5 +1,7 @@
 #include "treeitem.h"
 
+TreeItem* TreeItem::pItem = NULL;
+
 // Конструктор
 TreeItem::TreeItem(const QList<QVariant> &data, TreeItem *parent)
 {
@@ -9,6 +11,7 @@ TreeItem::TreeItem(const QList<QVariant> &data, TreeItem *parent)
 
 TreeItem::TreeItem(void)
 {
+    pItem = this;
     parentItem = NULL;
     itemData << "root";
 }

@@ -1,12 +1,18 @@
 #include "saxhandler.h"
 #include "treemodel.h"
 #include "treeitem.h"
+#include "room.h"
+#include "desktop.h"
+#include "cpu.h"
+#include "hdd.h"
 
-SaxHandler::SaxHandler(TreeItem *pti)
+
+SaxHandler::SaxHandler(TreeModel *ptree)
 {
-    pRootItem = pti;
-    room_child = 0;
-    desktop_child = 0;
+    //pTreeModel = ptree;
+    //pRootItem = pti;
+    //room_child = 0;
+    //desktop_child = 0;
 
 }
 
@@ -15,6 +21,10 @@ bool SaxHandler::startElement(const QString &,const QString &,const QString &qNa
 
   if(qName == "room")
   {
+
+      pTreeModel->CreateNewItem(qName,attribs);
+
+      /*
       QList<TreeItem*> parent;
       QList<QVariant>  ChildData;
       parent << pRootItem;
@@ -22,32 +32,40 @@ bool SaxHandler::startElement(const QString &,const QString &,const QString &qNa
       parent.last()->appendChild(new TreeItem(ChildData,pRootItem));
       pRoomItem = pRootItem->child(room_child++);
       desktop_child = 0;
+      */
   }
   else if(qName == "desktop")
   {
+      /*
       QList<TreeItem*> parent;
       QList<QVariant>  ChildData;
       parent << pRoomItem;
       ChildData << QString(qName).append(" ").append(attribs.value(0));
       parent.last()->appendChild(new TreeItem(ChildData,pRoomItem));
       pDeskTopItem = pRoomItem->child(desktop_child++);
+      */
+
   }
   else if(qName == "hdd")
   {
+      /*
       QList<TreeItem*> parent;
       QList<QVariant>  ChildData;
       parent << pDeskTopItem;
       ChildData << QString(qName).append(" ").append(attribs.value(0));
       parent.last()->appendChild(new TreeItem(ChildData,pDeskTopItem));
+      */
   }
 
   else if(qName == "cpu")
   {
+      /*
       QList<TreeItem*> parent;
       QList<QVariant>  ChildData;
       parent << pDeskTopItem;
       ChildData << QString(qName).append(" ").append(attribs.value(0));
       parent.last()->appendChild(new TreeItem(ChildData,pDeskTopItem));
+      */
   }
   return true;
 }

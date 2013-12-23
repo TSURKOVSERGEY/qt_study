@@ -1,4 +1,5 @@
 #include "treemodel.h"
+#include "room.h"
 
 
 TreeModel::TreeModel(void)
@@ -119,6 +120,12 @@ TreeItem* TreeModel::GetRootItem(void)
      return rootItem;
 }
 
+void TreeModel::CreateNewItem(const QString &qName,const QXmlAttributes &attribs)
+{
+
+    new RoomItem(qName,attribs);
+
+}
 
 /*
     QList<TreeItem*> parents;

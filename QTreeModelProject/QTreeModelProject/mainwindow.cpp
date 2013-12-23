@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     pFile       = new QFile("DefaultTree.xml");
     pXmlReader  = new QXmlSimpleReader();
     pSource     = new QXmlInputSource(pFile);
-    pHandler    = new SaxHandler(pTreeModel->GetRootItem());
+    pHandler    = new SaxHandler(pTreeModel);
     pView       = new QTreeView(this);
 
 

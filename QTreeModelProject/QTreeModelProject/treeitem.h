@@ -22,10 +22,18 @@ public:
     int row() const;
     TreeItem *parent();
 
-private:
+    static TreeItem *pItem;
+
     QList<TreeItem*> childItems;
     QList<QVariant> itemData;
     TreeItem *parentItem;
+
+private:
+
+
+
+
+
 };
 
 

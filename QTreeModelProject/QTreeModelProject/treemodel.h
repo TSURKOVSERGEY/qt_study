@@ -2,6 +2,7 @@
 #define TREEMODEL_H
 
 #include <QAbstractItemModel>
+#include <QXmlAttributes>
 #include <QModelIndex>
 #include <QString>
 #include <QStringList>
@@ -17,7 +18,7 @@ public:
     ~TreeModel();
 
     TreeItem* GetRootItem(void);
-
+    void CreateNewItem(const QString &qName,const QXmlAttributes &attribs);
 
     QVariant data(const QModelIndex &index, int role) const;
     Qt::ItemFlags flags(const QModelIndex &index) const;
@@ -32,6 +33,7 @@ public:
 private:
 
     TreeItem *rootItem;
+  //  TreeItem *pItem;
 };
 
 

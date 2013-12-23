@@ -17,12 +17,20 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     treeitem.cpp \
     treemodel.cpp \
-    saxhandler.cpp
+    saxhandler.cpp \
+    room.cpp \
+    desktop.cpp \
+    cpu.cpp \
+    hdd.cpp
 
 HEADERS  += mainwindow.h \
     treeitem.h \
     treemodel.h \
-    saxhandler.h
+    saxhandler.h \
+    room.h \
+    desktop.h \
+    cpu.h \
+    hdd.h
 
 FORMS    += mainwindow.ui
 

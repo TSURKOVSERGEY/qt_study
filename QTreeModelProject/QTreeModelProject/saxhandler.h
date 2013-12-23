@@ -9,7 +9,7 @@ class TreeItem;
 class SaxHandler : public QXmlDefaultHandler
 {
 public:
-    SaxHandler(TreeItem *pti);
+    SaxHandler(TreeModel *ptree);
 
   bool startElement(const QString &namespaceURI,
                     const QString &localName,
@@ -22,6 +22,8 @@ public:
   bool fatalError(const QXmlParseException &exception);
 
 private:
+
+  TreeModel       *pTreeModel;
 
   TreeItem        *pRootItem;
   TreeItem        *pRoomItem;
