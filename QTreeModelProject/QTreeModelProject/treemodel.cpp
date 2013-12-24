@@ -1,5 +1,4 @@
 #include "treemodel.h"
-#include "room.h"
 
 
 TreeModel::TreeModel(void)
@@ -120,97 +119,7 @@ TreeItem* TreeModel::GetRootItem(void)
      return rootItem;
 }
 
-void TreeModel::CreateNewItem(const QString &qName,const QXmlAttributes &attribs)
-{
 
-    new RoomItem(qName,attribs);
-
-}
-
-/*
-    QList<TreeItem*> parents;
-    QList<QVariant>  ChildData;
-
-    ChildData << QString("A");
-    parents << rootItem;
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem));
-
-    ChildData.clear();
-    ChildData << QString("B");
-    parents << rootItem;
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem));
-
-    ChildData.clear();
-    ChildData << QString("C");
-    parents << rootItem;
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem));
-
-
-    ChildData.clear();
-    ChildData << QString("a1");
-    parents << rootItem->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("b1");
-    parents << rootItem->child(1);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(1)));
-
-    ChildData.clear();
-    ChildData << QString("c1");
-    parents << rootItem->child(2);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(2)));
-
-
-    ChildData.clear();
-    ChildData << QString("1");
-    parents << rootItem->child(0)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(0)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("2");
-    parents << rootItem->child(0)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(0)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("3");
-    parents << rootItem->child(0)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(0)->child(0)));
-
-
-    ChildData.clear();
-    ChildData << QString("4");
-    parents << rootItem->child(1)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(1)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("5");
-    parents << rootItem->child(1)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(1)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("6");
-    parents << rootItem->child(1)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(1)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("7");
-    parents << rootItem->child(2)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(2)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("8");
-    parents << rootItem->child(2)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(2)->child(0)));
-
-    ChildData.clear();
-    ChildData << QString("9");
-    parents << rootItem->child(2)->child(0);
-    parents.last()->appendChild(new TreeItem(ChildData,rootItem->child(2)->child(0)));
-
-
-
- */
 
 
 

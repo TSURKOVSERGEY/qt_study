@@ -1,95 +1,75 @@
 #include "saxhandler.h"
 #include "treemodel.h"
 #include "treeitem.h"
-#include "room.h"
-#include "desktop.h"
-#include "cpu.h"
-#include "hdd.h"
-
+#include "room_item.h"
+#include "desktop_item.h"
+#include "hdd_item.h"
+#include "cpu_item.h"
 
 SaxHandler::SaxHandler(TreeModel *ptree)
 {
-    //pTreeModel = ptree;
-    //pRootItem = pti;
-    //room_child = 0;
-    //desktop_child = 0;
-
+    pTreeModel = ptree;
 }
 
 bool SaxHandler::startElement(const QString &,const QString &,const QString &qName,const QXmlAttributes &attribs)
 {
+    if(qName == "root")
+    {
+        return true;
+    }
+    else if(qName == "room")
+    {
+        QList<QVariant> ChildData;
+        ChildData << QString(qName).append(" ").append(attribs.value(0));
+        pBase = new RoomItem(ChildData);
+    }
+    else if(qName == "desktop")
+    {
+        QList<QVariant> ChildData;
+        ChildData << QString(qName).append(" ").append(attribs.value(0));
+        pBase = new DesktopItem(ChildData);
+    }
+    else if(qName == "hdd")
+    {
+        QList<QVariant> ChildData;
+        ChildData << QString(qName).append(" ").append(attribs.value(0));
+        pBase = new HddItem(ChildData);
+    }
+    else if(qName == "cpu")
+    {
+        QList<QVariant> ChildData;
+        ChildData << QString(qName).append(" ").append(attribs.value(0));
+        pBase = new CpuItem(ChildData);
+    }
 
-  if(qName == "room")
-  {
 
-      pTreeModel->CreateNewItem(qName,attribs);
+    pBase->PushItemPointer();
 
-      /*
-      QList<TreeItem*> parent;
-      QList<QVariant>  ChildData;
-      parent << pRootItem;
-      ChildData << QString(qName).append(" ").append(attribs.value(0));
-      parent.last()->appendChild(new TreeItem(ChildData,pRootItem));
-      pRoomItem = pRootItem->child(room_child++);
-      desktop_child = 0;
-      */
-  }
-  else if(qName == "desktop")
-  {
-      /*
-      QList<TreeItem*> parent;
-      QList<QVariant>  ChildData;
-      parent << pRoomItem;
-      ChildData << QString(qName).append(" ").append(attribs.value(0));
-      parent.last()->appendChild(new TreeItem(ChildData,pRoomItem));
-      pDeskTopItem = pRoomItem->child(desktop_child++);
-      */
-
-  }
-  else if(qName == "hdd")
-  {
-      /*
-      QList<TreeItem*> parent;
-      QList<QVariant>  ChildData;
-      parent << pDeskTopItem;
-      ChildData << QString(qName).append(" ").append(attribs.value(0));
-      parent.last()->appendChild(new TreeItem(ChildData,pDeskTopItem));
-      */
-  }
-
-  else if(qName == "cpu")
-  {
-      /*
-      QList<TreeItem*> parent;
-      QList<QVariant>  ChildData;
-      parent << pDeskTopItem;
-      ChildData << QString(qName).append(" ").append(attribs.value(0));
-      parent.last()->appendChild(new TreeItem(ChildData,pDeskTopItem));
-      */
-  }
-  return true;
+   return true;
 }
 
 bool SaxHandler::endElement(const QString &, const QString &,const QString &qName)
 {
-  if(qName == "hdd")
-  {
-      printf("");
-  }
-  else if(qName == "cpu")
-  {
-      printf("");
-  }
+
+    if(qName == "root")
+    {
+        return true;
+    }
+    else
+    {
+        pBase->PullItemPointer();
+    }
+
   return true;
 }
 
 
-bool SaxHandler::fatalError(const QXmlParseException &exception)
+bool SaxHandler::fatalError(Qt::DropAction /*action*/,const QXmlParseException &/*exception*/)
 {
   return false;
 }
 
-bool SaxHandler::characters(const QString &str)
+bool SaxHandler::characters(Qt::DropAction /*action*/,const QString &/*str*/)
 {
   return true;
 }

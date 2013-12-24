@@ -4,7 +4,7 @@
 #include<QXmlDefaultHandler>
 
 class TreeModel;
-class TreeItem;
+class BaseItem;
 
 class SaxHandler : public QXmlDefaultHandler
 {
@@ -18,22 +18,13 @@ public:
   bool endElement(const QString &namespaceURI,
                   const QString &localName,
                   const QString &qName);
-  bool characters(const QString &str);
-  bool fatalError(const QXmlParseException &exception);
+  bool characters(Qt::DropAction /*action*/, const QString &str);
+  bool fatalError(Qt::DropAction /*action*/, const QXmlParseException &exception);
 
 private:
 
-  TreeModel       *pTreeModel;
-
-  TreeItem        *pRootItem;
-  TreeItem        *pRoomItem;
-  TreeItem        *pDeskTopItem;
-
-  int             room_child;
-  int             desktop_child;
-
-
-
+  TreeModel  *pTreeModel;
+  BaseItem   *pBase;
 
 };
 

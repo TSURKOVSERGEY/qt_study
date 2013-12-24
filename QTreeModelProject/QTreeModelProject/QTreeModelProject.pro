@@ -18,19 +18,21 @@ SOURCES += main.cpp\
     treeitem.cpp \
     treemodel.cpp \
     saxhandler.cpp \
-    room.cpp \
-    desktop.cpp \
-    cpu.cpp \
-    hdd.cpp
+    room_item.cpp \
+    desktop_item.cpp \
+    base_item.cpp \
+    hdd_item.cpp \
+    cpu_item.cpp
 
 HEADERS  += mainwindow.h \
     treeitem.h \
     treemodel.h \
     saxhandler.h \
-    room.h \
-    desktop.h \
-    cpu.h \
-    hdd.h
+    room_item.h \
+    desktop_item.h \
+    base_item.h \
+    hdd_item.h \
+    cpu_item.h
 
 FORMS    += mainwindow.ui
 
